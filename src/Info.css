@@ -1,0 +1,116 @@
+p, h1, h2, div {
+  margin: 0px;
+}
+
+@keyframes slideIn {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+.info {
+  width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -300px;
+  margin-left: -300px;
+  animation-name: slideIn;
+  animation-duration: .5s;
+}
+
+.aurebesh-name {
+  font-family: "Aurebesh", "DIN Alternate", Helvetica, sans-serif;
+  margin: 0px;
+  width: 400px;
+  text-align: left;
+  background-color: #282727;
+  z-index: 2;
+  position: relative;
+  padding: 10px;
+  border-top: 2.5px solid #999;
+  border-left: 2.5px solid #999;
+  border-radius: 7px 0 0 0;
+}
+
+.info-name {
+  margin: 0px;
+  text-align: left;
+  background-color: #282727;
+  z-index: 4;
+  position: absolute;
+  padding: 0 50px 10px 10px;
+  border-radius: 0 0 7px 7px;
+  border-bottom: 2.5px solid #999;
+  border-right: 2.5px solid #999;
+  border-left: 2.5px solid #999;
+}
+
+.icons {
+  background-color: #282727;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  width: 500px;
+  text-align: right;
+  height: 38px;
+  border-radius: 0 7px 7px 0;
+  border-bottom: 2.5px solid #999;
+  border-right: 2.5px solid #999;
+  border-top: 2.5px solid #999;
+}
+
+.icon {
+  width: 20px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .9;
+  }
+}
+
+.data {
+  padding: 20px;
+  padding-top: 65px;
+  background-color: #57B7C7;
+  background-image: repeating-linear-gradient(
+  #7A84E9,
+  #7A84E9 2px,
+  #57B7C7 2px,
+  #57B7C7 4px);
+  opacity: 90%;
+  box-shadow:
+    0 0 10px 5px #57B7C7,
+    0 0 100px 0px #06182B;
+  text-align: left;
+  width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: slideDown;
+  animation-duration: 1s;
+}
+
+.flex {
+  display: flex;
+}
+
+.stats-border {
+  border-left: white solid 2px;
+  border-right: white solid 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.description {
+  padding-top: 20px;
+}

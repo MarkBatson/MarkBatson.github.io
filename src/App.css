@@ -1,0 +1,299 @@
+body {
+  /* background-color: #151515; */
+  /* background-color: #06182D; */
+  background-color: black;
+  /* background-image: radial-gradient(black, #07102F); */
+  font-family: "DIN Alternate", Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #000000;
+  /* background-color: #07142D; */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom:2px solid #999;
+/*  box-shadow:
+    0 0 10px 0px #57B7C7,
+    0 0 100px 0px #06182B;*/
+}
+
+.page {
+  padding-left: 15px;
+  padding-right: 15px;
+/*  color: #999;
+  cursor: pointer;*/
+  color: white;
+  transition: 0.3s;
+  font-family: "Aurebesh", "DIN Alternate", Helvetica, sans-serif;
+/*  border-left:1px solid #999;
+  border-right:1px solid #999;*/
+  display: inline-block;
+}
+
+.page::before {
+  font-family: "Aurebesh", "DIN Alternate", Helvetica, sans-serif;
+  display: block;
+  content: attr(title);
+  height: 1px;
+  color: transparent;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.page:hover, .selected {
+  font-family: "DIN Alternate", Helvetica, sans-serif;
+  color: white;
+}
+
+.list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  max-width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translate(0,40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: slideUp ease-in 1;
+  opacity: 0;
+  animation-fill-mode:forwards;
+  animation-duration:.25s;
+}
+
+.list-item {
+  background-color: #282727;
+  /* background-color: #06182D; */
+  /* background-color: black; */
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 7px;
+  /* transition: .5s; */
+  transition-timing-function: ease-out;
+  border: 2px solid #999;
+  box-shadow:
+    0 0 7px 0px #57B7C7,
+    0 0 100px 0px #06182B;
+}
+.list-item:hover {
+  border: 2px solid white;
+  background-color: #06182D;
+  box-shadow:
+    0 0 3px 1px white,
+    0 0 10px 5px #57B7C7,
+    0 0 100px 0px #06182B;
+}
+.list-item:hover .name{
+  border-top:2.5px solid white;
+}
+
+.image {
+  /* image size in powerpoint is 2.25"x2.25" */
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.name {
+  padding: 5px;
+  border-top:2.5px solid #999;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.line-button {
+  cursor: pointer;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+}
+
+.filter-button {
+  background-color: black;
+  border: 2px solid #999;
+  border-radius: 10px 10px 0px 10px;
+  position: fixed;
+  padding: 5px;
+  width: 30px;
+  right: 20px;
+  top: 20px;
+  z-index: 4;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-button:hover {
+  border: 2px solid white;
+  background-color: #999;
+}
+
+.filter-icon {
+  background-size: 20px 30px;
+}
+
+.filter-list {
+  z-index: 4;
+  text-align: right;
+  position: fixed;
+  padding: 10px;
+  right: 20px;
+  top: 70px;
+  transition: 1s;
+/*  background-color: #57B7C7;
+  background-image: repeating-linear-gradient(
+  #7A84E9,
+  #7A84E9 2px,
+  #57B7C7 2px,
+  #57B7C7 4px);*/
+  background-color: black;
+  opacity: 80%;
+  /*box-shadow:
+    0 0 10px 5px #57B7C7,
+    0 0 100px 0px #06182B;*/
+  border: 2px solid #999;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.filter-option {
+  cursor: pointer;
+}
+
+.filter-option-selected {
+  color: #999;
+}
+
+.filter-option:hover {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-bar {
+  margin-right: 20px;
+  padding: 10px;
+  border: 2px solid #999;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
+  &:focus {
+    border: 2px solid white;
+  }
+  background: url("https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Nav_Search-74ab820c48e2.svg") no-repeat;
+  background-position: 10px;
+  padding-left: 40px;
+}
+
+textarea, input { outline: none; }
+
+.obscurity-level {
+  --c: white; /* active color */
+  --g: 4px; /* the gap */
+  --l: 2px; /* line thickness*/
+  --s: 20px; /* thumb size*/
+  
+  width: 150px;
+  -webkit-appearance :none;
+  appearance :none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0px 10px;
+}
+
+input[type="range" i]::-webkit-slider-thumb{
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--l) inset var(--c);
+  border-image: linear-gradient(90deg,var(--c) 50%,#ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+<thumb selector> {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--l) inset var(--c);
+  appearance: none;
+}
+
+.filters {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.obscurity-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 525px) {
+  .obscurity-filter {
+    margin-top: 20px;
+  }
+
+  .search-bar {
+    margin-right: 0px;
+  }
+
+  .filter-button {
+    right: 0px;
+    top: 0px;
+    border: none;
+  }
+  .filter-list {
+    right: 0px;
+    top: 40px;
+  }
+  .filter-option {
+    font-size: 1.2rem;
+    padding:3px;
+  }
+
+  .filter-button:hover {
+    border: none;
+    background-color: black;
+}
+}
+
+@media only screen and (max-width: 450px) {
+  .image {
+      width: 170px;
+      height: 250px;
+  }
+}
