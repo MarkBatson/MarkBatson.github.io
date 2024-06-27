@@ -1,0 +1,74 @@
+.picker-container {
+	width: 200px;
+ 	z-index: 4;
+ 	position: fixed;
+  	padding: 10px;
+  	right: 20px;
+  	top: 70px;
+  	transition: 1s;
+	background-color: black;
+  	opacity: 80%;
+  	border: 2px solid #999;
+  	border-radius: 0px 0px 10px 10px;
+  	color: #999;
+}
+
+.picker-selected {
+	color: white;
+	background-color: black;
+	width: 100%;
+	opacity: 100%;
+}
+
+.picker-button-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	background-color: black;
+	opacity: 100%;
+	width: 100%;
+	border-bottom: 2px solid white;
+}
+
+.picker-button {
+	appearance: none;
+	-webkit-appearance: none;
+	color: white;
+	border: none;
+	background-color: black;
+	font-family: "DIN Alternate", Helvetica, sans-serif;
+	padding: 10px;
+	z-index: 100;
+	width: 50px;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 525px) {
+	.picker-container {
+		width: inherit;
+		position: fixed;
+		top: unset;
+		right: 0;
+        left: 0;
+		bottom: 0px;
+		font-size: 1.2rem;
+		border: none;
+	}
+
+	.picker-button {
+		font-size: 1.2rem;
+	}
+}

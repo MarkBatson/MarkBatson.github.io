@@ -1,5 +1,9 @@
 export const appearanceKey = [
   {
+    name: "None",
+    key: 0
+  },
+  {
     name: "The Phantom Menace",
     key: 1
   },
@@ -90,10 +94,6 @@ export const appearanceKey = [
   {
     name: "Young Jedi Adventures",
     key: 23
-  },
-  {
-    name: "Clear Filter",
-    key: -1
   }
 ]
 

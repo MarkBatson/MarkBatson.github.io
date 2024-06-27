@@ -157,14 +157,27 @@ a {
   top: 20px;
   z-index: 4;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.filter-button:hover {
-  border: 2px solid white;
+.filter-button-open {
+  width: 210px;
+  justify-content: space-between;
+  transition: 0.5s;
+  gap: 10px;
+}
+
+.filter-button-selected {
+  color: white;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.filter-applied {
   background-color: #999;
 }
 
@@ -197,10 +210,11 @@ a {
 
 .filter-option {
   cursor: pointer;
+  color: #999;
 }
 
 .filter-option-selected {
-  color: #999;
+  color: white;
 }
 
 .filter-option:hover {
@@ -257,6 +271,7 @@ input[type="range" i]::-webkit-slider-thumb{
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 0 0 0 var(--l) inset var(--c);
+  -webkit-appearance: none;
   appearance: none;
 }
 

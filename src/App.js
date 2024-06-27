@@ -4,23 +4,23 @@ import {jedi, republic} from "./data.js";
 import {species, appearanceKey} from "./species-data.js"
 import Info from './Info.component';
 import WelcomePage from './WelcomePage.component';
+import { FilterPicker } from './filterPicker.js';
 
 function App() {
   const [selected, setSelected] = useState('SPECIES');
   const [info, setInfo] = useState(-1);
   const [welcome, setWelcome] = useState(false);
-  const [filter, setFilter] = useState(-1);
+  const [filter, setFilter] = useState(0);
   const [showFilterList, setShowFilterList] = useState(false);
   const [search, setSearch] = useState("");
   const [obscurityLevel, setObscurityLevel] = useState(5);
-  // process.env.PUBLIC_URL + '/images/species/' + species.img
 
   const redirect = (link) => {
     window.open(link, '_blank');
   }
 
   const filterSpecies = (list) => {
-    if (filter > -1) {
+    if (filter > 0) {
       list = list.filter(species => species.appearance === filter);
     }
     if (search.length > -1) {
@@ -90,7 +90,7 @@ function App() {
     setSelected(page);
     setInfo(-1);
     setShowFilterList(false);
-    setFilter(-1);
+    setFilter(0);
   };
 
   const applyFilter = (filter) => {
@@ -114,9 +114,13 @@ function App() {
     );
   }
 
+  const filterList = () => {
+    return (<FilterPicker values={appearanceKey} selected={filter} setFilter={applyFilter} close={() => setShowFilterList(false)}/>);
+  }
+
   const filterSvg = () => {
     return (
-      <svg height="20" viewBox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg" fill="white">
+      <svg height="20" viewBox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg" fill={(filter !== 0 && !showFilterList) ? "black" : "white"}>
         <path d="M1595 295q17 41-14 70l-493 493v742q0 42-39 59-13 5-25 5-27 0-45-19l-256-256q-19-19-19-45v-486l-493-493q-31-29-14-70 17-39 59-39h1280q42 0 59 39z"/>
       </svg>
     );
@@ -133,18 +137,15 @@ function App() {
       {welcome && <WelcomePage close={() => setWelcome(false)} />}
 
       <div>
-        <div className="filter-button" onClick={() => setShowFilterList(!showFilterList)}>
+        <div className={`filter-button ${showFilterList && 'filter-button-open'} ${(filter !== 0) && "filter-applied"}`} onClick={() => setShowFilterList(!showFilterList)}>
+          {showFilterList && (
+            <div className="filter-button-selected">
+              {filter > 0 ? appearanceKey[filter].name : "Filter..."}
+            </div>
+          )}
           {filterSvg()}
         </div>
-        {(showFilterList &&
-          <div className="filter-list">
-            {appearanceKey.map((appearanceKey) => (
-              <div className={`filter-option ${(filter === appearanceKey.key) ? " filter-option-selected" : ""}`} onClick={() => applyFilter(appearanceKey.key)}>
-                {appearanceKey.name}
-              </div>
-            ))}
-          </div>
-        )}
+        {showFilterList && filterList()}
       </div>
 
       <div className="filters">
