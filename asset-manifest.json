@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/GalacticCompendium/static/css/main.091ea4f0.css",
+    "main.css": "/GalacticCompendium/static/css/main.fd120162.css",
     "main.js": "/GalacticCompendium/static/js/main.8619aa6c.js",
     "static/media/Aurebesh.ttf": "/GalacticCompendium/static/media/Aurebesh.2a7d5c9d883b731722f8.ttf",
     "index.html": "/GalacticCompendium/index.html",
-    "main.091ea4f0.css.map": "/GalacticCompendium/static/css/main.091ea4f0.css.map",
+    "main.fd120162.css.map": "/GalacticCompendium/static/css/main.fd120162.css.map",
     "main.8619aa6c.js.map": "/GalacticCompendium/static/js/main.8619aa6c.js.map"
   },
   "entrypoints": [
-    "static/css/main.091ea4f0.css",
+    "static/css/main.fd120162.css",
     "static/js/main.8619aa6c.js"
   ]
 }
