@@ -15,6 +15,13 @@ a {
   color: inherit;
 }
 
+@font-face {
+  font-family: 'Aurebesh';
+  src: local('Aurebesh'), url(./fonts/Aurebesh.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 .header {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -141,10 +148,11 @@ a {
 .filter-button {
   background-color: black;
   border: 2px solid #999;
-  border-radius: 10px 10px 0px 10px;
+  border-radius: 50px;
   position: fixed;
-  padding: 5px;
-  width: 30px;
+  padding: 7px;
+  padding-top: 8px;
+  width: 25px;
   right: 20px;
   top: 20px;
   z-index: 4;
@@ -271,24 +279,10 @@ input[type="range" i]::-webkit-slider-thumb{
     margin-right: 0px;
   }
 
-  .filter-button {
-    right: 0px;
-    top: 0px;
-    border: none;
-  }
-  .filter-list {
-    right: 0px;
-    top: 40px;
-  }
   .filter-option {
     font-size: 1.2rem;
     padding:3px;
   }
-
-  .filter-button:hover {
-    border: none;
-    background-color: black;
-}
 }
 
 @media only screen and (max-width: 450px) {
