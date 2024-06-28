@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.690d0a3c.css",
-    "main.js": "/static/js/main.df3b14b6.js",
+    "main.css": "/static/css/main.0e402abb.css",
+    "main.js": "/static/js/main.23ad99dc.js",
     "static/media/Aurebesh.ttf": "/static/media/Aurebesh.2a7d5c9d883b731722f8.ttf",
     "index.html": "/index.html",
-    "main.690d0a3c.css.map": "/static/css/main.690d0a3c.css.map",
-    "main.df3b14b6.js.map": "/static/js/main.df3b14b6.js.map"
+    "main.0e402abb.css.map": "/static/css/main.0e402abb.css.map",
+    "main.23ad99dc.js.map": "/static/js/main.23ad99dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.690d0a3c.css",
-    "static/js/main.df3b14b6.js"
+    "static/css/main.0e402abb.css",
+    "static/js/main.23ad99dc.js"
   ]
 }
