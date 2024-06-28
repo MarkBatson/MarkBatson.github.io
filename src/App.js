@@ -132,7 +132,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={`${showFilterList ? "no-scroll" : ""}`}>
       <div className="header">
         <span title="GALACTIC COMPENDIUM" className="page">
           GALACTIC COMPENDIUM
