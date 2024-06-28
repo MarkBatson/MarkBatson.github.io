@@ -11,8 +11,8 @@ export const FilterPicker = ({values, selected, setFilter, close}) => {
       <div className="overlay" onClick={close}></div>
       <div className="picker-container">
         <div className="picker-button-container">
-          <button className="picker-button cancel-button" onClick={() => setFilter(0)}>Clear</button>
-          <button className="picker-button set-button" onClick={() => setFilter(pickerValue.filterKey)}>Set</button>
+          <button role="button" type="button" className="picker-button cancel-button" onClick={() => setFilter(0)}>Clear</button>
+          <button role="button" type="button" className="picker-button set-button" onClick={() => setFilter(pickerValue.filterKey)}>Set</button>
         </div>
         <Picker value={pickerValue} onChange={setPickerValue} wheelMode="normal" height="300">
           <Picker.Column name="filterKey">

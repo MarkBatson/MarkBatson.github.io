@@ -126,6 +126,11 @@ function App() {
     );
   }
 
+  const filterClick = () => {
+    console.log("Filter clicked");
+    setShowFilterList(!showFilterList);
+  }
+
   return (
     <div>
       <div className="header">
@@ -137,7 +142,7 @@ function App() {
       {welcome && <WelcomePage close={() => setWelcome(false)} />}
 
       <div>
-        <div className={`filter-button ${showFilterList && 'filter-button-open'} ${(filter !== 0) && "filter-applied"}`} onClick={() => setShowFilterList(!showFilterList)}>
+        <div role="button" type="button" className={`filter-button ${showFilterList && 'filter-button-open'} ${(filter !== 0) && "filter-applied"}`} onClick={filterClick}>
           {showFilterList && (
             <div className="filter-button-selected">
               {filter > 0 ? appearanceKey[filter].name : "Filter..."}
@@ -157,7 +162,7 @@ function App() {
         </div>
       </div>
 
-      <div className="list">
+      <div className={`${showFilterList ? "list no-scroll" : "list"}`}>
         {(selected === 'JEDI' && !welcome) && jediList()}
         {(selected === 'SPECIES' && !welcome) && speciesList()}
         {(selected === 'REPUBLIC VEHICLES' && !welcome) && republicList()}
