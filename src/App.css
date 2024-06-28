@@ -60,11 +60,6 @@ a {
   visibility: hidden;
 }
 
-.page:hover, .selected {
-  font-family: "DIN Alternate", Helvetica, sans-serif;
-  color: white;
-}
-
 .list {
   display: flex;
   flex-flow: wrap;
@@ -115,17 +110,7 @@ a {
     0 0 7px 0px #57B7C7,
     0 0 100px 0px #06182B;
 }
-.list-item:hover {
-  border: 2px solid white;
-  background-color: #06182D;
-  box-shadow:
-    0 0 3px 1px white,
-    0 0 10px 5px #57B7C7,
-    0 0 100px 0px #06182B;
-}
-.list-item:hover .name{
-  border-top:2.5px solid white;
-}
+
 
 .image {
   /* image size in powerpoint is 2.25"x2.25" */
@@ -304,6 +289,25 @@ input[type="range"]::-webkit-slider-thumb:active{
   align-items: center;
 }
 
+@media only screen and (min-width: 525px) {
+  .list-item:hover {
+  border: 2px solid white;
+  background-color: #06182D;
+  box-shadow:
+    0 0 3px 1px white,
+    0 0 10px 5px #57B7C7,
+    0 0 100px 0px #06182B;
+  }
+  .list-item:hover .name{
+    border-top:2.5px solid white;
+  }
+
+  .page:hover, .selected {
+    font-family: "DIN Alternate", Helvetica, sans-serif;
+    color: white;
+  }
+}
+
 @media only screen and (max-width: 525px) {
   .obscurity-filter {
     margin-top: 20px;
@@ -317,10 +321,10 @@ input[type="range"]::-webkit-slider-thumb:active{
     font-size: 1.2rem;
     padding:3px;
   }
-  .filter-button:hover {
+/*  .filter-button:hover {
     border: 2px solid #999;
     background-color: black;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 450px) {
