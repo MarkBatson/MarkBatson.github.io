@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {jedi, republic} from "./data.js";
 import {species, appearanceKey} from "./species-data.js"
@@ -15,6 +15,28 @@ function App() {
   const [search, setSearch] = useState("");
   const [obscurityLevel, setObscurityLevel] = useState(5);
 
+  const [imageDisplayNumber, setImageDisplayNumber] = useState(20);
+  const [isLoading, setIsLoading] = useState (false);
+
+  const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop < document.documentElement.offsetHeight) {
+      return;
+    }
+    if (!isLoading) {
+      setIsLoading(true);
+      const newDisplayNumber = imageDisplayNumber + 10;
+      setImageDisplayNumber(newDisplayNumber);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    }
+  };
+
+  useEffect(() => {
+    !isLoading && window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+}, [imageDisplayNumber, isLoading]);
+
   const redirect = (link) => {
     window.open(link, '_blank');
   }
@@ -27,7 +49,7 @@ function App() {
       list = list.filter(species => species.name.startsWith(search.toUpperCase()));
     }
     list = list.filter(species => species.obscurity <= obscurityLevel);
-    return list;
+    return list.slice(0, imageDisplayNumber);
   }
 
   const filterJedi = (list) => {
@@ -40,13 +62,23 @@ function App() {
     return list;
   }
 
+  const getDelayAmmount = (index) => {
+    if (index >= 20 && index >= imageDisplayNumber - 20) {
+      return ((index - (imageDisplayNumber - 20))*.05);
+    }
+    else if (index >= 20 && index < (imageDisplayNumber - 20)) {
+      return 0;
+    }
+    return index*.05;
+  }
+
   const speciesList = () => {
     return (
       <>
         {
           filterSpecies(species).map((species, index) => (
           <div>
-            <div className="list-item fade-in" style={{animationDelay: index*.05 + "s"}} onClick={() => redirect(species.link)}>
+            <div className="list-item fade-in" style={{animationDelay: getDelayAmmount(index) + "s"}} onClick={() => redirect(species.link)}>
               <img src={species.img} className="image"/>
               <div className="name">{species.name}</div>
             </div>
@@ -96,6 +128,12 @@ function App() {
   const applyFilter = (filter) => {
     setFilter(filter);
     setShowFilterList(false);
+    setImageDisplayNumber(20);
+  };
+
+  const applySearch = (value) => {
+    setSearch(value);
+    setImageDisplayNumber(20);
   };
 
   const multiPageHeader = () => {
@@ -154,7 +192,7 @@ function App() {
       </div>
 
       <div className="filters">
-        <input className="search-bar" type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)}/>
+        <input className="search-bar" type="text" placeholder="Search" onChange={(e) => applySearch(e.target.value)}/>
         <div className="obscurity-filter">
           <div>Well Known</div>
           <input className="obscurity-level" type="range" min="1" max="6" value={obscurityLevel} onChange={(e) => setObscurityLevel(e.target.value)}/>
