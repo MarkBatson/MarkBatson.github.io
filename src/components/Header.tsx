@@ -26,7 +26,7 @@ function Header() {
 
   const mouseSvg = () => {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 65 105">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 65 105" height="100%">
         <polygon
           points="35.8,100 46.7,94.4 33.2,64 60.7,62.4 0,0 0,89.6 22.3,68.3"
           fill="none"
@@ -39,7 +39,7 @@ function Header() {
 
   const phoneSvg = () => {
     return (
-      <svg viewBox="0 0 1254.9332 2482.6187" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1254.9332 2482.6187" xmlns="http://www.w3.org/2000/svg" height="100%">
         <g transform="translate(522.46681,1092.8094)">
           <path
             d="m -350.26286,-1092.8093 a 172.20357,185.20833 0 0 0 -172.20396,185.20837 V 1204.6009 a 172.20357,185.20833 0 0 0 172.20396,185.2083 H 560.26296 A 172.20357,185.20833 0 0 0 732.4664,1204.6009 V -907.60093 A 172.20357,185.20833 0 0 0 560.26296,-1092.8093 Z m 311.055951,92.1789 H 249.20649 a 26.458333,26.458333 0 0 1 26.45834,26.45834 25.370672,25.370672 0 0 1 -26.45834,24.23418 H -39.206909 a 26.458333,26.458333 0 0 1 -26.458334,-26.45834 25.370672,25.370672 0 0 1 26.458334,-24.23418 z M -470.68238,-871.44087 H 680.68248 V 1135.0811 H -470.68238 V -870.9024 Z M 104.99979,1159.1701 a 100,100 0 0 1 100.0001,100.0001 100,100 0 0 1 -100.0001,100.0001 A 100,100 0 0 1 5.0002116,1259.1702 100,100 0 0 1 104.99979,1159.1701 Z"
@@ -53,11 +53,11 @@ function Header() {
 
   const codeSvg = () => {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124.5 217.5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124.5 217.5" height="100%">
         <path
           fillRule="evenodd"
           stroke="rgb(76, 81, 117)"
-          strokeWidth="3px"
+          strokeWidth="3"
           strokeLinecap="butt"
           strokeLinejoin="miter"
           fill="rgb(26, 26, 52)"
