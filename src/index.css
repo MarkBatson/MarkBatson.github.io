@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'coolvetica', sans-serif;
+  --font-body: 'helvetica-neue-lt-pro', sans-serif;
+
+  --color-dark-blue: #1a1a34;
+  --color-light-blue: #4d5377;
+  --color-home-depot: #f96302;
+  --color-uga: #b22935;
+
+  --color-dark-grey: #282727;
+  --color-medium-grey: #48494a;
+  --color-light-grey: #999;
+
+  --grid-template-columns-14: repeat(14, minmax(0, 1fr));
+}
+
+@layer base {
+  html {
+    @apply bg-dark-blue text-white font-sans;
+  }
+}

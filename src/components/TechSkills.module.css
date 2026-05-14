@@ -1,0 +1,26 @@
+.grid li {
+  grid-column: span 2;
+}
+
+/* small: 5 then 4 alternating */
+.grid li:nth-child(9n + 6) {
+  grid-column: 2 / span 2;
+}
+
+/* hide overflow items on small screens */
+.grid li:nth-child(n + 19) {
+  display: none;
+}
+
+/* large: 7 then 6 alternating */
+@media (min-width: 1024px) {
+  .grid li:nth-child(9n + 6) {
+    grid-column: span 2;
+  }
+  .grid li:nth-child(13n + 8) {
+    grid-column: 2 / span 2;
+  }
+  .grid li:nth-child(n + 19) {
+    display: flex;
+  }
+}
